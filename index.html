@@ -76,13 +76,24 @@
       text-align: left;
     }
 
-    .payment-method img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
+    .payment-content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .payment-method input {
+    .payment-content img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .payment-content .info {
+      flex: 1;
+    }
+
+    .payment-content .info input {
       width: 100%;
       padding: 0.6rem;
       background: transparent;
@@ -92,7 +103,7 @@
       margin-bottom: 0.5rem;
     }
 
-    .payment-method button {
+    .payment-content .info button {
       width: 100%;
       padding: 0.5rem;
       background: var(--primary);
@@ -104,7 +115,7 @@
       transition: 0.3s;
     }
 
-    .payment-method button:hover {
+    .payment-content .info button:hover {
       background: var(--accent);
       color: white;
     }
@@ -167,15 +178,23 @@
     <p class="subtitle">Silakan pilih salah satu metode pembayaran</p>
 
     <div class="payment-method">
-      <img src="https://img1.pixhost.to/images/5551/595708376_levvihosting.jpg" alt="Dana">
-      <input type="text" value="0895424274270" id="dana" readonly>
-      <button onclick="copyText('dana')"><i class="fas fa-copy"></i> COPY</button>
+      <div class="payment-content">
+        <img src="https://img1.pixhost.to/images/5551/595708376_levvihosting.jpg" alt="Dana">
+        <div class="info">
+          <input type="text" value="0895424274270" id="dana" readonly>
+          <button onclick="copyText('dana')"><i class="fas fa-copy"></i> COPY</button>
+        </div>
+      </div>
     </div>
 
     <div class="payment-method">
-      <img src="https://files.catbox.moe/3gig7z.jpg" alt="GoPay">
-      <input type="text" value="0895424274270" id="gopay" readonly>
-      <button onclick="copyText('gopay')"><i class="fas fa-copy"></i> COPY</button>
+      <div class="payment-content">
+        <img src="https://files.catbox.moe/3gig7z.jpg" alt="GoPay">
+        <div class="info">
+          <input type="text" value="0895424274270" id="gopay" readonly>
+          <button onclick="copyText('gopay')"><i class="fas fa-copy"></i> COPY</button>
+        </div>
+      </div>
     </div>
 
     <button class="main-button" onclick="window.location.href='https://wa.me/6281260703431'"><i class="fab fa-whatsapp"></i> WhatsApp</button>
